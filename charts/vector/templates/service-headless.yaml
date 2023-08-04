@@ -126,4 +126,7 @@ spec:
   topologyKeys:
     {{- toYaml . | nindent 4 }}
   {{- end }}
+{{- if .Values.service.externalTrafficPolicy }}
+  internalTrafficPolicy: {{ .Values.service.internalTrafficPolicy }}
+{{- end }}
 {{- end }}
